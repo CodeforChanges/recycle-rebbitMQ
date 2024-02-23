@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672" # AMQP 프로토콜 포트
+      - "15672:15672" # 관리 인터페이스 포트
+    networks:
+      - codeforchange_network
+
+networks:
+  codeforchange_network:
+    external: true
